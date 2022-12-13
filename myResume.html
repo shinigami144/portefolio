@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        .blockCompétence>img{
+            width: 100%;
+            background-color: white;
+        }
+        .blockCompétence{
+            display: grid;
+            grid-template-columns: 30% 70%;
+            width: 100%;
+        }
+        h1,h3{
+            text-align: center;
+        }
+        button{
+            margin-left: 45%;
+            margin-right: 45%;
+        }
+        a>img{
+            width: 20%;
+            height: 10%;
+            margin-left: 40%;
+            margin-right: 40%;
+        }
+    </style>
+    <link href="./css/allPages.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <h1>Resume</h1>
+    <a><img src="./img/dllResume.png"></img></a>
+    <h1>Some Skills</h1>
+    <div class="grid">
+        <div id="ItLanguageSkills">
+            <h3>Language</h3>
+        
+        </div>
+        <div id="Fremwordk">
+            <h3>Engine</h3>
+        </div>
+        <div id="softSkills">
+            <h3>Soft Skills</h3>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./js/headerGenerator.js"></script>
+<script>
+    headerGenerator();
+    function createBlockSkill(link,value){
+        var returnValue = '<div class="blockCompétence">';
+        returnValue+= '<image class="icon" src='+link+'></image>';
+        returnValue+= '<input type="range" list="tickmarks" value ='+value+' disabled="disabled" />'
+        returnValue+= '<datalist id="tickmarks">';
+        for( var i = 0 ; i < 10 ; i++){
+            returnValue+= '<option value='+(i*10)+'>'
+        }
+        returnValue += '</datalist>';
+        returnValue+= '</div>';
+        return returnValue;
+    }
+
+    function createCollonum(idBlock,listeLink){
+        var html = "";
+        //console.log(listeLink);
+        for(var i = 0 ; i < listeLink.length ;i++){
+            console.log(listeLink);
+            html+= createBlockSkill(listeLink[i][0],listeLink[i][1]);
+        }
+        document.getElementById(idBlock).innerHTML += html;
+    }
+
+    var listeOfITskills = [["./img/Csharp.png",80],["./img/python.png",75],
+    ["./img/java.jpg",70]];
+    var listeOfFramework = [["./img/rpgmaker.jpg",65],["./img/Srpgstudio.jpg",70],["./img/unity.jpg",80],["./img/UE.png",55]];
+    var softSkills = [["./img/adaptabilite.png",80],["./img/autonomy.jpg",75],["./img/creativite.png",70]];
+
+    createCollonum("ItLanguageSkills",listeOfITskills);
+    createCollonum("Fremwordk",listeOfFramework);
+    createCollonum("softSkills",softSkills);
+
+</script>
+</html>

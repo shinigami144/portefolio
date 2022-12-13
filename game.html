@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./css/game.css">
+    </head>
+<body>
+    <div id="SelectPlayer">
+        <div class="Grid2Col">
+            <label>1 Joueur</label>
+            <label>2 Joueur</label>
+            <input type="radio" name="playerNumber" checked>
+            <input type="radio" name="playerNumber">
+        </div>
+        <button class="buttonBlock" onclick="startGame()">Start</button>
+    </div>
+    <div id="Game">
+        <div class="Grid2Col">
+            <label>Player 1 score</label>
+            <label>Player 2 score</label>
+            <input type="number" readonly="true" value="0" id="player1Score">
+            <input type="number" readonly="true" value="0" id="player2Score">
+        </div>
+        <div id="bord"></div>
+    </div>
+    <div id="restartButton">
+        <button class="buttonBlock" onclick="restartGame()">Restart</button>
+    </div>
+</body>
+<script type="text/javascript" src="./js/Game.js"></script>
+<script>
+    document.getElementById("Game").style.display ="none";
+    var game;
+
+    function restartGame(){
+        document.getElementById("restartButton").style.display = "none";
+        document.getElementById("Game").style.display = "none";
+        document.getElementById("SelectPlayer").style.display = "block";
+    }
+
+    function startGame(){
+        document.getElementById("Game").style.display = "block";
+        if(document.getElementsByName("playerNumber")[0].checked){
+            game = new Game(false);
+        }
+        else{
+            game = new Game(true);
+        }
+        document.getElementById("SelectPlayer").style.display = "none";
+    }
+
+</script>
+</html>

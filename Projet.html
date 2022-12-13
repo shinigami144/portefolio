@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet</title>
+</head>
+<link href="./css/allPages.css" rel="stylesheet">
+<style>
+    img{
+        width: auto;
+        height: 400px;
+        margin: auto;
+    }
+    #Navigateur{
+        margin-top: 2%;
+        height: 400px;
+        min-height: 30%;
+        width: 100%;
+    }
+    #img1{
+        display: block;
+    }
+    #img2{
+        display: none;
+    }
+    #img3{
+        display: none;
+
+    }
+    #img4{
+        display: none;
+    }
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 25%;
+        width: auto;
+        margin-top: -1%;
+        color: white;
+        font-weight: bold;
+        transition: 0.6s ease;
+        border-radius: 100%;
+        padding: 1%;
+        font-size: 200%;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 10%;
+        border-radius: 100%
+    }
+    .prev {
+        left: 10%;
+        border-radius: 100%
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    #des{
+        text-align: center;
+    }
+    #des>h1{
+        border: 1px solid black;
+    }
+    #des>div>p{
+        font-size: large;
+    }
+</style>
+<body>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div id="Navigateur">
+    </div>
+    <div id="des">
+        <h1>Description</h1>
+        <div id="desrip">Projet accesible sur demande ( gitubpage ne prend que des site lèger et statique</div>
+    </div>
+</body>
+<script type="text/javascript" src="./js/headerGenerator.js"></script>
+<script type="text/javascript" src="./js/MapProject.js"></script>
+<script>
+    var numbersilde=0;
+    function plusSlides(number){
+        //console.log(document.getElementById("img"+numbersilde));
+        document.getElementById("img"+(numbersilde+1)).style = "display:none";
+        numbersilde= (4+numbersilde+number)%4;
+        //console.log(numbersilde+1);
+        //console.log(document.getElementById("img"+(numbersilde+1)));
+        document.getElementById("img"+(numbersilde+1)).style = "display:block";
+        
+    }
+    headerGenerator();
+    function PageConstruct(nameprojet){
+        var html = "";
+        html+= '<img id="img1" src="./projet/'+nameprojet+'/img/I1.png">';
+        html+= '<img id="img2" src="./projet/'+nameprojet+'/img/I2.png">';
+        html+= '<img id="img3" src="./projet/'+nameprojet+'/img/I3.png">';
+        html+= '<img id="img4" src="./projet/'+nameprojet+'/img/I4.png">';
+        document.getElementById("Navigateur").innerHTML = html;
+        document.getElementById("desrip").innerHTML = MapDescription.get(nameprojet).call();
+
+    }
+
+    function getValue(){
+        var url = new URL(window.location.href);
+        var projetname = url.searchParams.get("name");
+        PageConstruct(projetname);
+    }
+
+    getValue();
+
+</script>
+
+
+</html>

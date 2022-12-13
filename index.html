@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortefoolioIndex</title>
+</head>
+<link href="./css/allPages.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/home.css">
+<body>
+    <div id="introduction">
+        <img id="profileImage" onclick="gameShow()" src="./img/profile.jpg">
+        <div id="textIntroduction">
+            <p>I am a young developer with a great interest in game design and user experience.</p>
+            <p>With a master in Serious games and video games from the Ludus académie,</p>
+            <p>I am currently looking for a job in order to improve my skills and develop new ones.</p>
+            <p>My long term goal is to enter the world of video games with which I have been rocked</p>
+        </div>
+    </div>
+    <iframe id="iframeGame" src="./game.html"></iframe>
+</body>
+<script type="text/javascript" src="./js/headerGenerator.js"></script>
+<script>
+    headerGenerator();
+    document.getElementById("iframeGame").style.display = "none";
+    function gameShow(){
+        document.getElementById("iframeGame").style.display = "block";
+    }
+</script>
+</html>

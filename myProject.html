@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<style>
+
+    .block{
+        background-color: darkgray;
+        border :1px solid black
+    }
+
+    a:hover{
+        border: 2px solid red;
+    }
+
+    .block>img{
+        width: 100%;
+        margin: 0%;
+    }
+    #gridProjet{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .table{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 0%;
+        row-gap: 0%;
+    }
+    .table>h5{
+        margin: 0%;
+        text-align: center;
+        border: 1px solid black;
+    }
+    .table>p{
+        margin: 0%;
+        text-align: center;
+        border: 1px solid black;
+    }
+    .table{
+        margin-top: 0%;
+        background-color: lightblue;
+        border: 1px solid black;
+    }
+    
+
+
+</style>
+<link href="./css/allPages.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/home.css">
+<body>
+    <div id="gridProjet">
+        
+    </div>
+</body>
+<script type="text/javascript" src="./js/headerGenerator.js"></script>
+<script type="text/javascript" src="./js/MapProject.js"></script>
+<script>
+    headerGenerator();
+    var numberOfProjet = ProjectId.length;
+    CreateProjetLink();
+
+    function CreateProjetLink(){
+        var html = "";
+        for(var i=0;i < numberOfProjet;i++){
+            html += CreateBlockProjet(i);
+        }
+        console.log(html);
+        document.getElementById("gridProjet").innerHTML = html;
+    }
+
+
+    function CreateBlockProjet(i){
+        var text = "<a href='./Projet.html?name="+ProjectId[i]+"'>"
+            text += "<div class='block' onclick='ClickPorject("+i+")'>";
+            text+= '<img src="./projet/'+ProjectId[i]+'/img/I1.png">'
+            text+= "<div class='table'>";
+                text+= "<h5>Project Language</h5>";
+                text+= "<h5>Number of workers</h5>"
+                text += "<p>"+ProjectLanguage[i]+"</p>";
+                text+="<p>"+ProjectMember[i]+"</p>";
+            text+= "</div>";
+        text+= "</div>";
+        text+="</a>"
+        return text;
+
+    }
+
+</script>
+</html>
