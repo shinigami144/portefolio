@@ -44,7 +44,9 @@
         border: 1px solid black;
     }
     
-
+    .projetlink:hover{
+        border: solid red 1px;
+    }
 
 </style>
 <link href="./css/allPages.css" rel="stylesheet">
@@ -72,7 +74,7 @@
 
 
     function CreateBlockProjet(i){
-        var text = "<a href='./Projet.html?name="+ProjectId[i]+"'>"
+        var text = "<a class='projetlink' href='./Projet.html?name="+ProjectId[i]+"'>"
             text += "<div class='block' onclick='ClickPorject("+i+")'>";
             text+= '<img src="./projet/'+ProjectId[i]+'/img/I1.PNG">'
             text+= "<div class='table'>";
