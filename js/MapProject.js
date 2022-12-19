@@ -1,9 +1,9 @@
 
 var ProjectLanguage = ["Html - Css - Js","Html - Css - Js","C#-Unity","C#-Unity","C#-Unity","Js-SrpgStudio"];
 var ProjectMember = ["1","1","1","1","1","1"];
-var ProjectId = ["portefolio","Tarification Kpm"];
+var ProjectId = ["portefolio","Tarification Kpm","Hiragana/Katakana","gacha/Animator","SpaceLearning","srpgFirstTest"];
 var MapDescription = new Map();
-var functionList = [Description_portefolio]
+var functionList = [Description_portefolio,Description_kpm,Description_Hiragana,Description_PrototypeGacha,Description_PrototypeSpace,Description_tactical]
 constructMapDescription();
 function constructMapDescription(){
     for(var i = 0;i<ProjectId.length;i++){
@@ -53,7 +53,7 @@ function Description_PrototypeGacha(){
     return text;
 }
 
-function Description_PrototypeGacha(){
+function Description_PrototypeSpace(){
     var text = "<p>This is a serious game prototype create with the objectif to display it on show.</p>";
     text+= "<p>The player goal is to aswers to the question ( is this planet/sun avaible for humain life )</p>"
     text+= "<p>I choose to divide the project with two system, one for the show with infinite play time.</p>";
