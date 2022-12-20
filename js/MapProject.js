@@ -1,7 +1,7 @@
 
 var ProjectLanguage = ["Html - Css - Js","Html - Css - Js","C#-Unity","C#-Unity","C#-Unity","Js-SrpgStudio"];
 var ProjectMember = ["1","1","1","1","1","1"];
-var ProjectId = ["portefolio","Tarification Kpm","Hiragana/Katakana","gacha/Animator","SpaceLearning","srpgFirstTest"];
+var ProjectId = ["portefolio","KpmTaxation","HiraganaKatakana","PrototypeGacha","SpaceLearning","Tactcal"];
 var MapDescription = new Map();
 var functionList = [Description_portefolio,Description_kpm,Description_Hiragana,Description_PrototypeGacha,Description_PrototypeSpace,Description_tactical]
 constructMapDescription();
