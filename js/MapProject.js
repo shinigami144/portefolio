@@ -31,7 +31,8 @@ function Description_kpm(){
     text+= "<p>I did that for 2 reason.</p>";
     text+= "<p>The first was to have a real project with client and that doesn't finish with a prototype</p>";
     text+= "<p>The second was to test my skill in real condition in html-css-js</p>";
-    text+= "<p>With this project i have seen that some problem comes from the inplementation and you need to adapt your code to the previous code</p>"
+    text+= "<p>With this project i have seen that some problem comes from the inplementation and you need to adapt your code to the previous code</p>";
+    text+= "<p>I have also help for the creation the intégration of the new site who is in developement on the link <a>https://beta.kpm-group.com/home</a>";
     return text;
 }
 function Description_Hiragana(){
