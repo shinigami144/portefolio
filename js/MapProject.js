@@ -1,9 +1,9 @@
 
 var ProjectLanguage = ["Html - Css - Js","Html - Css - Js","C#-Unity","C#-Unity","C#-Unity","Js-SrpgStudio"];
-var ProjectMember = ["1","1","1","1","1","1"];
-var ProjectId = ["portefolio","KpmTaxation","HiraganaKatakana","PrototypeGacha","SpaceLearning","Tactcal"];
+var ProjectMember = ["1","1","1","1","1","1","4"];
+var ProjectId = ["portefolio","KpmTaxation","HiraganaKatakana","PrototypeGacha","SpaceLearning","Tactcal","InTheBlack"];
 var MapDescription = new Map();
-var functionList = [Description_portefolio,Description_kpm,Description_Hiragana,Description_PrototypeGacha,Description_PrototypeSpace,Description_tactical]
+var functionList = [Description_portefolio,Description_kpm,Description_Hiragana,Description_PrototypeGacha,Description_PrototypeSpace,Description_tactical,Description_IntheBlack]
 constructMapDescription();
 function constructMapDescription(){
     for(var i = 0;i<ProjectId.length;i++){
@@ -60,7 +60,7 @@ function Description_PrototypeSpace(){
     text+= "<p>I choose to divide the project with two system, one for the show with infinite play time.</p>";
     text+= "<p>The other was for solo play with a scoring and limited number of answers</p>";
     text+= "<p>Because it is a serious games i decide to use true data form the NASA.</p>";
-    text+= "<p>The prototype will be on github soon</p>"
+    text+= "<p>The prototype is on my itchio : <a></a></p>"
     return text;
 }
 
@@ -70,5 +70,12 @@ function Description_tactical(){
     text+= "<p>In second the project let me train my balencing skill</p>";
     text+= "<p>it was hard but realy fun to create</p>";
     text+= "<p>The prototype will be on github soon</p>"
+    return text;
+}
+
+function Description_IntheBlack(){
+    var text = "<p>project with which we won the brussels game jam 2023</p>";
+    text+= "<p>the objective was to force the player to play with only 1 of his senses : hearing, so all the game is played in front of a black screen </p>"
+    text+= "<p> You can try the game following this link <a>https://ultrashokk.itch.io/dans-le-noir</a></p>"
     return text;
 }

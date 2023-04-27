@@ -81,7 +81,7 @@
     </div>
     <div id="des">
         <h1>Description</h1>
-        <div id="desrip">Projet accesible sur demande ( gitubpage ne prend que des site lèger et statique</div>
+        <div id="desrip">Projet accesible sur demande gitubpage ne prend que des site lèger et statique</div>
     </div>
 </body>
 <script type="text/javascript" src="./js/headerGenerator.js"></script>
@@ -89,11 +89,8 @@
 <script>
     var numbersilde=0;
     function plusSlides(number){
-        //console.log(document.getElementById("img"+numbersilde));
         document.getElementById("img"+(numbersilde+1)).style = "display:none";
         numbersilde= (4+numbersilde+number)%4;
-        //console.log(numbersilde+1);
-        //console.log(document.getElementById("img"+(numbersilde+1)));
         document.getElementById("img"+(numbersilde+1)).style = "display:block";
         
     }
